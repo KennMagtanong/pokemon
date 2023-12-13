@@ -10,9 +10,18 @@ export default async function Home() {
       {data.pokemon.map((pokemon, index) => <div key={index}>
         {pokemon.pokemon.name}
       </div>)} */}
-      {data.damage_relations.double_damage_from.map((pokemon, index) => (
-        <div className={`${index === 1 && "text-red-500"}`} key={index}>{pokemon.name} {index}</div>
-      ))}
+      {data.damage_relations.double_damage_from.map(
+        (
+          pokemon: {
+            name: string;
+          },
+          index: number
+        ) => (
+          <div className={`${index === 1 && "text-red-500"}`} key={index}>
+            {pokemon.name} {index}
+          </div>
+        )
+      )}
     </main>
   );
 }
